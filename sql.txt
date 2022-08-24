@@ -1,0 +1,89 @@
+                                                                                                        SQL
+- Stands for Structured Query Language
+-Used  for relational database(RDBMS) and  also used to retrieve and manipulate data
+-Way of communicating with database
+-Non-procedural language(means you cannot write complete applications with it but can communicate with data)
+ 
+     Types of SQL Languages
+       -------------------------
+1. DDL(Data Definiton Language):  used to create or alter tables
+commands used-  CREATE, ALTER
+
+2. DML (Data Manipulation Language): used to manipulate data
+commands used: SELECT, INSERT, UPDATE, DELETE, TRUNCATE
+3. DCL(Data Control Language): Give access to whom and how much
+commands used- REVOKE(access lena), GRANT(access dena), DENY(block access)
+4. TCL(Transaction Control Language): used to save changed data or to restore data
+commands used- COMMIT(to finalise the action), ROLLBACK(used to correct mistake), BEGIN( to start the action)
+
+     TYPES OF KEYS
+     ------------------
+1.  PRIMARY KEY - uniquely identifies a tuple in db , it cannot be null, a table has only one primary key
+
+Eg. customer ID PRIMARY KEY
+       -----------     (underline meaning this is a PK)
+2. FOREIGN KEY- makes relation between 2 tables , FK of 1 table points to the PK of another
+3. UNIQUE KEY - uniquely defines the tuple but it can be null
+
+HOW to create DB 
+-------------------
+ syntax- CREATE DATABASE db_name;
+Create Table
+------------
+CREATE TABLE tablename(colname datatype(size), colname2 dtatype(size)........);
+eg. CREATE TABLE employee( ID INT(5) PRIMARY KEY ,
+                                                    NAME VARCHAR(255),
+                                                       SALARY DECIMAL(4,2)
+                                                                );
+# Manipulating CommandS:
+SELECT, WHERE, UPDATE, DELETE,INSERT, TRUNCATE
+1. SELECT-
+eg. SELECT ID
+   from emp
+where AGE>14;
+
+#OPERATors-
+AND, OR ,IN, NOT IN, LIKE,  IS NOT NULL, BETWEEN AND
+-------------
+eg. SELECT ID
+   from emp
+where AGE>14 AND GENDER= 'Female'; 
+
+.... SELECT DOB
+   FROM emp
+where AGE>=18 OR GENDER='F';
+
+........RAM, SHam, ghansham
+firstname IN('.RAM', 'SHam', 'ghansham')
+.... LIKE operator- PATTERN MATCHING
+firstname LIKE('%SHAY%');
+
+....... BETWEEN AND
+ eg. WHERE
+hiredate BETWEEN'12-01-2021' AND '12-01-2022';
+.....IS NOT NULL- return all enteries which are not null
+eg. WHERE
+last_name IS NOT NULL;
+
+SELECT DISTINCT-
+eg. SELECT DISTINCT NAME
+from emp
+where age>14;
+
+#AGGREGATE FUNCTIONS:
+
+SUM(), MAX(),MIN(),AVG(),COUNT()
+EG. SELECT  AVG(SALARY), COUNT(GENDER),
+from emp;
+
+#ALIAS - give new name
+EG. SELECT  AVG(SALARY) AS SALARY
+
+
+
+
+
+
+
+
+
